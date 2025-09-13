@@ -48,7 +48,7 @@ const SingleProperty = ({ user }) => {
           <p>{property.host}</p>
         </div>
         <h3>Reviews</h3>
-        {user ? (
+        {user?.user_id ? (
           <AddReview
             property_id={property_id}
             user={user}
