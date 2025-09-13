@@ -19,9 +19,12 @@ function App() {
       <Header />
       <Nav />
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/properties/:property_id" element={<SingleProperty />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="" element={<Home user={user} />} />
+        <Route
+          path="/properties/:property_id"
+          element={<SingleProperty user={user} />}
+        />
+        <Route path="/home" element={<Home user={user} />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route
           path="/my-account/:userId"

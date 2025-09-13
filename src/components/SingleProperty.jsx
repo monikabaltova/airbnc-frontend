@@ -2,13 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { data, useParams } from "react-router";
 import ReviewsList from "./ReviewsList";
+import AddReview from "./AddReview";
 
-const SingleProperty = () => {
+const SingleProperty = ({ user }) => {
   const { property_id } = useParams();
   const [property, setProperty] = useState({ property: "somthing" });
   const [isLoading, setIsLoading] = useState(false);
   const [isReviewsShowing, setIsReviewsShowing] = useState(false);
   const [reviews, setReviews] = useState([]);
+  const [refreshReviews, setRefreshReviews] = useState(false);
 
   useEffect(() => {
     setIsReviewsShowing(false);
@@ -19,7 +21,7 @@ const SingleProperty = () => {
         setProperty(data.property);
         setIsLoading(false);
       });
-  }, [property_id]);
+  }, [property_id, refreshReviews]);
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -44,12 +46,24 @@ const SingleProperty = () => {
           <p>{property.host}</p>
         </div>
         <h3>Reviews</h3>
+        {user ? (
+          <AddReview
+            property_id={property_id}
+            user={user}
+            property={property}
+            onReviewAdded={() => setRefreshReviews((prev) => !prev)}
+          />
+        ) : null}
         {isReviewsShowing ? (
           <>
             <button onClick={() => setIsReviewsShowing(!isReviewsShowing)}>
               Hide reviews
             </button>
-            <ReviewsList reviews={reviews} />
+            <ReviewsList
+              reviews={reviews}
+              setReviews={setReviews}
+              user={user}
+            />
           </>
         ) : (
           <button
