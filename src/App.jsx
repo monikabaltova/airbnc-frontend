@@ -8,9 +8,11 @@ import AboutUs from "./components/About";
 import { Route, Routes, Link } from "react-router";
 import MyAccount from "./components/Account";
 import ContactUs from "./components/ContactUs";
+import LogIn from "./components/LogIn";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState([]);
+  const [userId, setUserId] = useState(null);
 
   return (
     <>
@@ -21,8 +23,15 @@ function App() {
         <Route path="/properties/:property_id" element={<SingleProperty />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/my-account" element={<MyAccount />} />
+        <Route
+          path="/my-account/:userId"
+          element={<MyAccount userId={userId} user={user} setUser={setUser} />}
+        />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route
+          path="/log-in"
+          element={<LogIn userId={userId} setUserId={setUserId} />}
+        />
       </Routes>
     </>
   );

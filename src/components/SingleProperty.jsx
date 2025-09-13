@@ -60,7 +60,6 @@ const SingleProperty = () => {
                   `https://airbnc-1dqu.onrender.com/api/properties/${property_id}/reviews`
                 )
                 .then(({ data }) => {
-                  console.log(data);
                   setReviews(data.reviews);
                 });
             }}
