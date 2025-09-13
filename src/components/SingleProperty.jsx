@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { data, useParams } from "react-router";
 import ReviewsList from "./ReviewsList";
 import AddReview from "./AddReview";
+import FavouritAProperty from "./FavouriteAProperty";
 
 const SingleProperty = ({ user }) => {
   const { property_id } = useParams();
@@ -41,6 +42,7 @@ const SingleProperty = ({ user }) => {
         <p>{property.description}</p>
         <p>GBP {property.price_per_night}</p>
         <p>{property.favourite_count}</p>
+        <FavouritAProperty user={user} property_id={property_id} />
         <div>
           <img src={property.host_avatar} />
           <p>{property.host}</p>
