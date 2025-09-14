@@ -8,7 +8,6 @@ const MyAccount = ({ userId, user, setUser, properties }) => {
     axios
       .get(`https://airbnc-1dqu.onrender.com/api/users/${userId}`)
       .then(({ data }) => {
-        console.log(data);
         setUser(data.user);
       })
       .catch(() => {
@@ -23,10 +22,10 @@ const MyAccount = ({ userId, user, setUser, properties }) => {
         `https://airbnc-1dqu.onrender.com/api/properties?host_id=${user.user_id}`
       )
       .then(({ data }) => {
-        setHostProperties(data.properties || []);
+        setHostProperties(data.properties);
       });
   }, [user]);
-  console.log(hostProperties);
+
   return (
     <>
       <aside>
@@ -49,19 +48,14 @@ const MyAccount = ({ userId, user, setUser, properties }) => {
         <aside className="host-properties">
           <h2>Your properties: </h2>
           <ul>
-            {properties
-              .filter(
-                (property) =>
-                  `${user.first_name} ${user.surname}` === property.host
-              )
-              .map((property) => (
-                <li key={property.property_id}>
-                  <img src={property.image} alt={property.property_name} />
-                  <h2>{property.property_name}</h2>
-                  <p>{property.location}</p>
-                  <p>GBP {property.price_per_night}</p>
-                </li>
-              ))}
+            {hostProperties.map((property) => (
+              <li key={property.property_id}>
+                <img src={property.image} alt={property.property_name} />
+                <h2>{property.property_name}</h2>
+                <p>{property.location}</p>
+                <p>GBP {property.price_per_night}</p>
+              </li>
+            ))}
           </ul>
         </aside>
       ) : (
