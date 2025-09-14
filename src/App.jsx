@@ -11,6 +11,7 @@ import ContactUs from "./components/ContactUs";
 import LogIn from "./components/LogIn";
 
 function App() {
+  const [properties, setProperties] = useState([]);
   const [user, setUser] = useState([]);
   const [userId, setUserId] = useState(null);
 
@@ -19,16 +20,41 @@ function App() {
       <Header />
       <Nav />
       <Routes>
-        <Route path="" element={<Home user={user} />} />
+        <Route
+          path=""
+          element={
+            <Home
+              properties={properties}
+              setProperties={setProperties}
+              user={user}
+            />
+          }
+        />
         <Route
           path="/properties/:property_id"
           element={<SingleProperty user={user} />}
         />
-        <Route path="/home" element={<Home user={user} />} />
+        <Route
+          path="/home"
+          element={
+            <Home
+              properties={properties}
+              setProperties={setProperties}
+              user={user}
+            />
+          }
+        />
         <Route path="/about-us" element={<AboutUs />} />
         <Route
           path="/my-account/:userId"
-          element={<MyAccount userId={userId} user={user} setUser={setUser} />}
+          element={
+            <MyAccount
+              userId={userId}
+              user={user}
+              setUser={setUser}
+              properties={properties}
+            />
+          }
         />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route

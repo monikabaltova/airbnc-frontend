@@ -60,4 +60,26 @@ html {
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
+
+  aside {
+    float: left;
+    margin: 0, 1.5%;
+    position: relative;
+    width: 50%;
+    display: block;
+  }
+
+  aside img {
+    width: 50%;
+    height: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  ul li img {
+    width: 50%;
+    height: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
 }

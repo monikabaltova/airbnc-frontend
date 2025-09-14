@@ -2,9 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-const Home = () => {
-  const [properties, setProperties] = useState([]);
-
+const Home = ({ properties, setProperties }) => {
   useEffect(() => {
     axios
       .get("https://airbnc-1dqu.onrender.com/api/properties")
