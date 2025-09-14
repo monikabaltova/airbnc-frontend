@@ -7,7 +7,6 @@ const ReviewsList = ({ reviews, setReviews, user }) => {
   ) : (
     <ul>
       {reviews.map((review) => {
-        console.log(review.review_id);
         return (
           <li className="review-card" key={review.review_id}>
             <p>{review.comment}</p>
