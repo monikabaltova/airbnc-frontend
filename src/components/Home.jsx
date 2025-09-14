@@ -8,7 +8,6 @@ const Home = ({ properties, setProperties }) => {
       .get("https://airbnc-1dqu.onrender.com/api/properties")
       .then(({ data }) => {
         setProperties(data.properties);
-        console.log(data.properties[0]);
       });
   }, []);
 
