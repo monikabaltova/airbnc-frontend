@@ -1,9 +1,12 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const LogIn = ({ userId, setUserId }) => {
+  const navigate = useNavigate();
+
   const handleLogin = () => {
     const value = document.getElementById("user-id").value;
     setUserId(value);
+    navigate(`/my-account/${value}`);
   };
 
   return (

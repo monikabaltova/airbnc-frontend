@@ -23,7 +23,6 @@ const MyAccount = ({ userId, user, setUser, properties }) => {
         `https://airbnc-1dqu.onrender.com/api/properties?host_id=${user.user_id}`
       )
       .then(({ data }) => {
-        // adjust if your API returns { properties: [...] }
         setHostProperties(data.properties || []);
       });
   }, [user]);
