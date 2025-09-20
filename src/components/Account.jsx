@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import axios from "axios";
 
 const MyAccount = ({ userId, user, setUser, properties }) => {
@@ -44,22 +45,24 @@ const MyAccount = ({ userId, user, setUser, properties }) => {
           <strong>Phone number:</strong> {user.phone_number}
         </p>
       </aside>
-      {user.is_host ? (
+      {Boolean(user?.is_host) && (
         <aside className="host-properties">
           <h2>Your properties: </h2>
           <ul>
             {hostProperties.map((property) => (
-              <li key={property.property_id}>
-                <img src={property.image} alt={property.property_name} />
-                <h2>{property.property_name}</h2>
-                <p>{property.location}</p>
-                <p>GBP {property.price_per_night}</p>
-              </li>
+              <Link
+                key={property.property_id}
+                to={`/properties/${property.property_id}`}
+              >
+                <li key={property.property_id}>
+                  <img src={property.image} alt={property.property_name} />
+                  <h2>{property.property_name}</h2>
+                  <p>{property.location}</p>
+                </li>
+              </Link>
             ))}
           </ul>
         </aside>
-      ) : (
-        <></>
       )}
     </>
   );

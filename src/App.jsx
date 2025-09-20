@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Header />
-      <Nav />
+      <Nav user={user}/>
       <Routes>
         <Route
           path=""

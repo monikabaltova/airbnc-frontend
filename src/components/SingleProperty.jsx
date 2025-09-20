@@ -39,9 +39,9 @@ const SingleProperty = ({ user }) => {
             />
           ))}
         <p>{property.location}</p>
-        <p>{property.description}</p>
+        <p>Describtion: {property.description}</p>
         <p>GBP {property.price_per_night}</p>
-        <p>{property.favourite_count}</p>
+        <p>Liked: {property.favourite_count}</p>
         <FavouritAProperty user={user} property_id={property_id} />
         <div>
           <img src={property.host_avatar} />

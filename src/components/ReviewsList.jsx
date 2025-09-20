@@ -1,11 +1,10 @@
 import axios from "axios";
 
 const ReviewsList = ({ reviews, setReviews, user }) => {
-  console.log(reviews);
   return !reviews ? (
     <p> There is no reviews for this property!</p>
   ) : (
-    <ul>
+    <ul className="review-card">
       {reviews.map((review) => {
         return (
           <li className="review-card" key={review.review_id}>
