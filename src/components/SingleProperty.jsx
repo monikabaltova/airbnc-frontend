@@ -30,59 +30,73 @@ const SingleProperty = ({ user }) => {
     <>
       <section className="single-property">
         <h2>{property.property_name}</h2>
-        {property.images &&
-          property.images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`${property.property_name} ${index + 1}`}
-            />
-          ))}
+        <div className="scroll-container">
+          {property.images &&
+            property.images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`${property.property_name} ${index + 1}`}
+              />
+            ))}
+        </div>
         <p>{property.location}</p>
-        <p>Describtion: {property.description}</p>
-        <p>GBP {property.price_per_night}</p>
-        <p>Liked: {property.favourite_count}</p>
-        <FavouritAProperty user={user} property_id={property_id} />
-        <div>
+        <aside className="property-describtion">
+          <p>
+            <strong> Describtion: </strong> {property.description}
+          </p>
+          <p>
+            <strong>GBP </strong>
+            {property.price_per_night}
+          </p>
+          <p>Liked: {property.favourite_count}</p>
+          <FavouritAProperty user={user} property_id={property_id} />
+        </aside>
+        <aside className="property-host">
+          <p>
+            <strong>Host</strong>
+          </p>
           <img src={property.host_avatar} />
           <p>{property.host}</p>
-        </div>
-        <h3>Reviews</h3>
-        {user?.user_id ? (
-          <AddReview
-            property_id={property_id}
-            user={user}
-            property={property}
-            onReviewAdded={() => setRefreshReviews((prev) => !prev)}
-          />
-        ) : null}
-        {isReviewsShowing ? (
-          <>
-            <button onClick={() => setIsReviewsShowing(!isReviewsShowing)}>
-              Hide reviews
-            </button>
-            <ReviewsList
-              reviews={reviews}
-              setReviews={setReviews}
+        </aside>
+        <div className="reviews">
+          <h3>Reviews</h3>
+          {user?.user_id ? (
+            <AddReview
+              property_id={property_id}
               user={user}
+              property={property}
+              onReviewAdded={() => setRefreshReviews((prev) => !prev)}
             />
-          </>
-        ) : (
-          <button
-            onClick={() => {
-              setIsReviewsShowing(!isReviewsShowing);
-              axios
-                .get(
-                  `https://airbnc-1dqu.onrender.com/api/properties/${property_id}/reviews`
-                )
-                .then(({ data }) => {
-                  setReviews(data.reviews);
-                });
-            }}
-          >
-            Show reviews
-          </button>
-        )}
+          ) : null}
+          {isReviewsShowing ? (
+            <>
+              <button onClick={() => setIsReviewsShowing(!isReviewsShowing)}>
+                Hide reviews
+              </button>
+              <ReviewsList
+                reviews={reviews}
+                setReviews={setReviews}
+                user={user}
+              />
+            </>
+          ) : (
+            <button
+              onClick={() => {
+                setIsReviewsShowing(!isReviewsShowing);
+                axios
+                  .get(
+                    `https://airbnc-1dqu.onrender.com/api/properties/${property_id}/reviews`
+                  )
+                  .then(({ data }) => {
+                    setReviews(data.reviews);
+                  });
+              }}
+            >
+              Show reviews
+            </button>
+          )}
+        </div>
       </section>
     </>
   );

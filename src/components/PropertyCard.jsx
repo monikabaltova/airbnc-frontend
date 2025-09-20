@@ -15,7 +15,7 @@ const PropertyCard = ({ properties }) => {
                 <h2>{property.property_name}</h2>
                 <p>{property.location}</p>
                 <p>GBP {property.price_per_night}</p>
-                <button>Book</button>
+                <button>View</button>
               </li>
             </Link>
           );

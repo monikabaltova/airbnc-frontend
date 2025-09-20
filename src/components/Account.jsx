@@ -29,7 +29,7 @@ const MyAccount = ({ userId, user, setUser, properties }) => {
 
   return (
     <>
-      <aside>
+      <aside className="my-account-details">
         <h2>Personal details:</h2>
         <img src={user.avatar} />
         <p>
