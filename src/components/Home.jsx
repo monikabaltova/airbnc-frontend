@@ -1,36 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import Filter from "./Filter";
+import PropertyList from "./PropertyList";
 
 const Home = ({ properties, setProperties }) => {
-  useEffect(() => {
-    axios
-      .get("https://airbnc-1dqu.onrender.com/api/properties")
-      .then(({ data }) => {
-        setProperties(data.properties);
-      });
-  }, []);
-
   return (
     <>
-      <ul className="properties">
-        {properties.map((property) => {
-          return (
-            <Link
-              key={property.property_id}
-              to={`/properties/${property.property_id}`}
-            >
-              <li>
-                <img src={property.image} alt={property.property_name} />
-                <h2>{property.property_name}</h2>
-                <p>{property.location}</p>
-                <p>GBP {property.price_per_night}</p>
-                <button>Book</button>
-              </li>
-            </Link>
-          );
-        })}
-      </ul>
+      <Filter />
+      <PropertyList properties={properties} setProperties={setProperties} />
     </>
   );
 };

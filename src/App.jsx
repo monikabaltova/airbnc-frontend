@@ -5,9 +5,8 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import SingleProperty from "./components/SingleProperty";
 import AboutUs from "./components/About";
-import { Route, Routes, Link } from "react-router";
+import { Route, Routes } from "react-router";
 import MyAccount from "./components/Account";
-import ContactUs from "./components/ContactUs";
 import LogIn from "./components/LogIn";
 
 function App() {
@@ -56,7 +55,6 @@ function App() {
             />
           }
         />
-        <Route path="/contact-us" element={<ContactUs />} />
         <Route
           path="/log-in"
           element={<LogIn userId={userId} setUserId={setUserId} />}
