@@ -23,11 +23,11 @@ const AddReview = ({ property_id, user, onReviewAdded }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-review" onSubmit={handleSubmit}>
       <h3>Leave a review</h3>
 
       <label>
-        Rating (1–5)
+        Rating
         <input
           type="number"
           min="1"

@@ -10,7 +10,7 @@ const LogIn = ({ userId, setUserId }) => {
   };
 
   return (
-    <div>
+    <div className="log-in">
       <label htmlFor="user-id">
         User ID
         <input id="user-id"></input>
