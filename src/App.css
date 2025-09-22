@@ -174,9 +174,6 @@ div.scroll-container img {
   -webkit-appearance: none;
   margin: 0;
 }
-.add-review input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 .add-review button[type="submit"] {
   display: block;
@@ -190,12 +187,6 @@ div.scroll-container img {
   letter-spacing: 0.2px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
-.add-review button[type="submit"]:hover {
-  filter: brightness(1.05);
-}
-.add-review button[type="submit"]:active {
-  transform: translateY(1px);
-}
 
 .add-review .hint {
   grid-column: 2;
@@ -203,12 +194,6 @@ div.scroll-container img {
   font-weight: 400;
   color: #6b7280;
   font-size: 0.9rem;
-}
-
-@media (max-width: 560px) {
-  .add-review label {
-    grid-template-columns: 1fr;
-  }
 }
 
 .reviews {
@@ -226,7 +211,6 @@ div.scroll-container img {
   gap: 1rem;
 }
 
-/* Each review card */
 .review-card {
   background: #ffffff;
   padding: 1.25rem 1.5rem;
@@ -243,7 +227,6 @@ div.scroll-container img {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Comment */
 .review-comment {
   font-size: 1rem;
   line-height: 1.5;
@@ -251,18 +234,16 @@ div.scroll-container img {
   margin: 0;
 }
 
-/* Rating */
 .review-rating {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #f59e0b; /* golden yellow */
+  color: #f59e0b;
   margin: 0;
 }
 
-/* Profile row: avatar + name */
 .review-card img {
-  width: 20%; /* 20% of card width */
-  max-width: 96px; /* don’t let it get too big */
+  width: 20%;
+  max-width: 96px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -309,23 +290,13 @@ button {
 button:hover {
   border-color: #213547;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: rgb(171, 169, 169);
-  }
-  button {
-    background-color: #e5e3e3;
-  }
-}
 
+a:hover {
+  color: rgb(171, 169, 169);
+}
+button {
+  background-color: #e5e3e3;
+}
 .single-property img {
   width: 50%;
   height: 50%;
@@ -354,11 +325,6 @@ button:focus-visible {
   display: grid;
   gap: 1.25rem;
 }
-@media (min-width: 900px) {
-  .account-layout {
-    grid-template-columns: 380px 1fr;
-  }
-}
 
 .account-card {
   background: #fff;
@@ -384,18 +350,6 @@ button:focus-visible {
 .details-grid {
   display: grid;
   gap: 0.5rem 0.75rem;
-}
-@media (min-width: 520px) {
-  .details-grid {
-    grid-template-columns: max-content 1fr;
-  }
-  .details-grid p {
-    margin: 0;
-  }
-  .details-grid p strong {
-    white-space: nowrap;
-    padding-right: 0.75rem;
-  }
 }
 
 .property-grid {
