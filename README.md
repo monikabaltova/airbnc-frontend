@@ -2,7 +2,7 @@
 
 ## Overview
 
-A full-stack web application that mimics a property rental site, that allows users to explore available properties and view detailed information on each property. The application fetches data from a database and dynamically displays properties based on user preferences. 
+A full-stack web application that mimics a property rental site, that allows users to explore available properties and view detailed information on each property. The application fetches data from a database and dynamically displays properties based on user preferences.
 
 This repo is for the Frontend portion of the project and is built using React.js, HTML, CSS, React Router, Axios, and Vite.
 
@@ -25,4 +25,7 @@ npm install
 ```
 npm run dev
 ```
+
 ### 💻 Live View:
+
+(https://airbnc-mb.netlify.app/)
