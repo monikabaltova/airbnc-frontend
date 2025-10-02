@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import SingleProperty from "./components/SingleProperty";
-import AboutUs from "./components/About";
 import { Route, Routes } from "react-router";
 import MyAccount from "./components/Account";
 import LogIn from "./components/LogIn";
@@ -17,7 +16,7 @@ function App() {
   return (
     <>
       <Header />
-      <Nav user={user}/>
+      <Nav user={user} />
       <Routes>
         <Route
           path=""
@@ -43,7 +42,6 @@ function App() {
             />
           }
         />
-        <Route path="/about-us" element={<AboutUs />} />
         <Route
           path="/my-account/:userId"
           element={
