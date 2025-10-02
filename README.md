@@ -1,12 +1,28 @@
-# React + Vite
+# AirBNC - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+A full-stack web application that mimics a property rental site, that allows users to explore available properties and view detailed information on each property. The application fetches data from a database and dynamically displays properties based on user preferences. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This repo is for the Frontend portion of the project and is built using React.js, HTML, CSS, React Router, Axios, and Vite.
 
-## Expanding the ESLint configuration
+### 👩‍💻Instalation steps:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**1. Fork and then clone the repositiory to work locally on your machine:**
+
+```
+git clone
+```
+
+**2. Install the necessary dependencies running:**
+
+```
+npm install
+```
+
+**3. To run a local development server using Vite run:**
+
+```
+npm run dev
+```
+### 💻 Live View:
