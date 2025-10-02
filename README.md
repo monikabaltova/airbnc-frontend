@@ -28,4 +28,4 @@ npm run dev
 
 ### 💻 Live View:
 
-(https://airbnc-mb.netlify.app/)
+[https://airbnc-mb.netlify.app/](https://airbnc-mb.netlify.app/)
